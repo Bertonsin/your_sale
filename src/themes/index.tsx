@@ -3,6 +3,11 @@ import { extendTheme } from '@chakra-ui/react';
 
 export const customTheme = extendTheme({
   semanticTokens: {
+    global: {
+      'html,body': {
+        backgroundColor: '#F2F2F2',
+      },
+    },
     colors: {
       primary: '#00297B',
       black: '#212326',

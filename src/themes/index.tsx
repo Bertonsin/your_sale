@@ -10,7 +10,7 @@ export const customTheme = extendTheme({
       white: '#F2F2F2',
     },
     fonts: {
-      heading: `'Inter', sans-serif`,
+      heading: `'Ubuntu'`,
       body: `'Inter', sans-serif`,
       button: `'Inter', sans-serif`,
     },

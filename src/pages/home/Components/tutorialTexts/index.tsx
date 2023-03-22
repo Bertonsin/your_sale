@@ -2,7 +2,7 @@ import { Box, Text } from '@chakra-ui/react';
 
 export default function TutorialTexts() {
   return (
-    <Box textAlign="justify" width="45%" fontSize="18px">
+    <Box w="container.sm" textStyle="bodyText">
       <Box mb={8} color="#797979">
         <Text>
           Voce podera iniciar sua venda clicando em

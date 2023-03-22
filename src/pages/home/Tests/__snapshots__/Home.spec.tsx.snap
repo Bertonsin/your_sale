@@ -1,0 +1,156 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`home screen > should display a Header and a Banner 1`] = `
+<div>
+  <div
+    class="chakra-container css-5ypx3o"
+  >
+    <div
+      class="chakra-stack css-fd20l"
+    >
+      <div
+        class="chakra-stack css-1d4fi7s"
+      >
+        <div
+          class="css-mxhe7w"
+        >
+          <img
+            class="chakra-image css-0"
+            src="/Coins.png"
+          />
+        </div>
+        <div
+          class="chakra-stack css-1pfi9rq"
+        >
+          <h2
+            class="chakra-heading css-1p9c8n6"
+          >
+            <p
+              class="chakra-text css-0"
+            >
+              Your Sale
+            </p>
+          </h2>
+          <p
+            class="chakra-text css-0"
+          >
+            Realize suas vendas de forma rápida e segura
+          </p>
+        </div>
+        <div
+          class="css-mxhe7w"
+        >
+          <img
+            class="chakra-image css-0"
+            src="/Phone.png"
+          />
+        </div>
+      </div>
+      <div
+        class="chakra-stack css-1epox5h"
+      >
+        <div
+          class="css-fi0oaz"
+        >
+          <div
+            class="css-128iqam"
+          >
+            <p
+              class="chakra-text css-0"
+            >
+              Voce podera iniciar sua venda clicando em
+              <strong>
+                 NOVA VENDA 
+              </strong>
+              assim preenchendos os dados necessarios e gerando um novo pedido
+            </p>
+          </div>
+          <div
+            class="css-0"
+          >
+            <p
+              class="chakra-text css-1ncuk4g"
+            >
+              Voce podera visualizar todas vendas criadas clicando em
+              <strong>
+                 LISTA DE PEDIDOS 
+              </strong>
+               assim podendo visualizar a listagem de pedidos e verificar detalhe do pedido criado.
+            </p>
+          </div>
+        </div>
+        <div
+          class="chakra-stack css-majmq"
+        >
+          <a
+            href="/newOrder"
+            style="width: 100%; height: 100%; margin-right: 10em;"
+          >
+            <button
+              aria-label="card"
+              class="chakra-button css-82b7o0"
+              type="button"
+            >
+              <div
+                class="chakra-stack css-k9twck"
+              >
+                <img
+                  class="chakra-image css-1t9pz9x"
+                  src="/newOrder.png"
+                />
+                <div
+                  class="css-1eif5ff"
+                >
+                  <p
+                    class="chakra-text css-1g6pthj"
+                  >
+                    Nova Venda
+                  </p>
+                  <p
+                    class="chakra-text css-1ncuk4g"
+                  >
+                    Inicie uma nova venda
+                  </p>
+                </div>
+              </div>
+            </button>
+          </a>
+          <a
+            href="/orderList"
+            style="width: 100%; height: 100%; margin-right: 10em;"
+          >
+            <button
+              aria-label="card"
+              class="chakra-button css-82b7o0"
+              type="button"
+            >
+              <div
+                class="chakra-stack css-k9twck"
+              >
+                <img
+                  class="chakra-image css-1t9pz9x"
+                  src="/orderList.png"
+                />
+                <div
+                  class="css-1eif5ff"
+                >
+                  <p
+                    class="chakra-text css-1g6pthj"
+                  >
+                    Nova Venda
+                  </p>
+                  <p
+                    class="chakra-text css-1ncuk4g"
+                  >
+                    Inicie uma nova venda
+                  </p>
+                </div>
+              </div>
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -9,10 +9,32 @@ export const customTheme = extendTheme({
       gray: '#CCCCCC',
       white: '#F2F2F2',
     },
-    fonts: {
-      heading: `'Ubuntu'`,
-      body: `'Inter', sans-serif`,
-      button: `'Inter', sans-serif`,
+  },
+  textStyles: {
+    bodyText: {
+      fontStyle: 'normal',
+      fontWeight: '400',
+      fontSize: ['10px', '15px', '18px'],
+      lineHeight: '160%',
+      textAlign: ['center', 'center', 'justify'],
+      fontFamily: `'Inter', sans-serif`,
+    },
+    headingText: {
+      fontStyle: 'normal',
+      fontWeight: 'bold',
+      fontSize: ['40px', '60px', '80px'],
+      lineHeight: '110%',
+      textAlign: ['center', 'center', 'justify'],
+      fontFamily: `'Ubuntu'`,
+    },
+    buttonText: {
+      fontStyle: 'normal',
+      fontWeight: 'medium',
+      fontSize: ['10px', '18px'],
+      lineHeight: '110%',
+      textAlign: 'center',
+      fontFamily: `'Ubuntu'`,
+      textTransform: 'capitalize',
     },
   },
 });

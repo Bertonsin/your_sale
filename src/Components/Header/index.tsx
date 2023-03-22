@@ -1,34 +1,27 @@
-import { Stack, Text, Box, Image, Heading } from '@chakra-ui/react';
+import { Text, Box, Image, Heading, HStack, VStack } from '@chakra-ui/react';
 
 export default function Header() {
   return (
-    <Stack
-      width="80%"
-      flexDirection="row"
-      justifyContent="space-between"
-      alignItems="center"
-    >
-      <Box width="20%">
+    <HStack w="full" justifyContent="space-between" alignItems="center">
+      <Box w="sm">
         <Image src="/Coins.png" />
       </Box>
-      <Stack
-        width="40%"
-        p={10}
-        alignItems="center"
-        justifyContent="center"
-        position="relative"
+      <VStack
+        w="container.md"
         borderBottom="1px solid black"
+        gap={2}
+        pb={[0, 12]}
       >
-        <Heading as="h1" size="4xl" color="primary">
-          Your Sale
+        <Heading color="primary">
+          <Text textStyle="headingText">Your Sale</Text>
         </Heading>
-        <Text fontSize="18px" fontWeight="normal">
+        <Text textStyle="bodyText">
           Realize suas vendas de forma rápida e segura
         </Text>
-      </Stack>
-      <Box width="20%">
+      </VStack>
+      <Box w="sm">
         <Image src="/Phone.png" />
       </Box>
-    </Stack>
+    </HStack>
   );
 }

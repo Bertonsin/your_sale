@@ -1,0 +1,91 @@
+{
+  "clients": [
+    {
+      "name": "Globex Corporation",
+      "cnpj": "64.236.578/0001-24",
+      "state": "GO",
+      "city": "Anápolis"
+    },
+    {
+      "name": "Globex Corporation",
+      "cnpj": "81.399.428/0001-50",
+      "state": "GO",
+      "city": "Anápolis"
+    },
+    {
+      "name": "Globex Corporation",
+      "cnpj": "58.003.089/0001-20",
+      "state": "GO",
+      "city": "Anápolis"
+    },
+    {
+      "name": "Globex Corporation",
+      "cnpj": "21.045.989/0001-20",
+      "state": "GO",
+      "city": "Anápolis"
+    },
+    {
+      "name": "Globex Corporation",
+      "cnpj": "87.617.984/0001-32",
+      "state": "GO",
+      "city": "Anápolis"
+    },
+    {
+      "name": "Globex Corporation",
+      "cnpj": "70.213.674/0001-50",
+      "state": "GO",
+      "city": "Anápolis"
+    },
+    {
+      "name": "Globex Corporation",
+      "cnpj": "46.672.384/0001-90",
+      "state": "GO",
+      "city": "Anápolis"
+    },
+    {
+      "name": "Globex Corporation",
+      "cnpj": "32.708.476/0001-78",
+      "state": "GO",
+      "city": "Anápolis"
+    }
+  ],
+
+  "itens": [
+    {
+      "product": "Notebook Acer 16' 12gb 512gb",
+      "cost": "R$ 2500.00",
+      "stock": "20",
+      "unitPrice": "R$ 5000.00"
+    },
+    {
+      "product": "Notebook Acer 16' 12gb 512gb",
+      "cost": "R$ 2500.00",
+      "stock": "20",
+      "unitPrice": "R$ 5000.00"
+    },
+    {
+      "product": "Notebook Acer 16' 12gb 512gb",
+      "cost": "R$ 2500.00",
+      "stock": "20",
+      "unitPrice": "R$ 5000.00"
+    },
+    {
+      "product": "Notebook Acer 16' 12gb 512gb",
+      "cost": "R$ 2500.00",
+      "stock": "20",
+      "unitPrice": "R$ 5000.00"
+    },
+    {
+      "product": "Notebook Acer 16' 12gb 512gb",
+      "cost": "R$ 2500.00",
+      "stock": "20",
+      "unitPrice": "R$ 5000.00"
+    },
+    {
+      "product": "Notebook Acer 16' 12gb 512gb",
+      "cost": "R$ 2500.00",
+      "stock": "20",
+      "unitPrice": "R$ 5000.00"
+    }
+  ]
+}

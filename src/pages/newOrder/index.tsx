@@ -2,6 +2,7 @@ import { Box, Container, VStack } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import Card from '../../Components/Card';
 import Header from '../../Components/Header';
+import ClientList from './components/clientList';
 
 export default function NewOrder() {
   return (
@@ -23,8 +24,11 @@ export default function NewOrder() {
           bg="#FFF"
         >
           <Card src="/newOrder.png" title="Nova Venda" />
-          {/* Formulario */}
         </VStack>
+        <Box w="full">
+          <ClientList />
+        </Box>
+        {/* Formulario */}
       </VStack>
     </Container>
   );

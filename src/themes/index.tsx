@@ -32,6 +32,14 @@ export const customTheme = extendTheme({
       textAlign: ['center', 'center', 'justify'],
       fontFamily: `'Ubuntu'`,
     },
+    listText: {
+      fontStyle: 'normal',
+      fontWeight: 'medium',
+      fontSize: ['10px', '16px'],
+      lineHeight: '110%',
+      textAlign: 'center',
+      fontFamily: `'Inter'`,
+    },
     buttonText: {
       fontStyle: 'normal',
       fontWeight: 'medium',

@@ -1,5 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 import { extendTheme } from '@chakra-ui/react';
+import { Button } from './components/Button';
 
 export const customTheme = extendTheme({
   semanticTokens: {
@@ -15,6 +16,20 @@ export const customTheme = extendTheme({
       white: '#F2F2F2',
     },
   },
+  components: {
+    Checkbox: {
+      baseStyle: {
+        control: {
+          borderColor: '#212326',
+          _checked: {
+            bg: '#00297B',
+            borderColor: '#00297B',
+          },
+        },
+      },
+    },
+    Button,
+  },
   textStyles: {
     bodyText: {
       fontStyle: 'normal',
@@ -26,7 +41,7 @@ export const customTheme = extendTheme({
     },
     headingText: {
       fontStyle: 'normal',
-      fontWeight: 'bold',
+      fontWeight: '700',
       fontSize: ['40px', '60px', '80px'],
       lineHeight: '110%',
       textAlign: ['center', 'center', 'justify'],
@@ -34,20 +49,10 @@ export const customTheme = extendTheme({
     },
     listText: {
       fontStyle: 'normal',
-      fontWeight: 'medium',
-      fontSize: ['10px', '16px'],
-      lineHeight: '110%',
+      fontWeight: '500',
+      fontSize: ['8px', '12px', '16px'],
       textAlign: 'center',
-      fontFamily: `'Inter'`,
-    },
-    buttonText: {
-      fontStyle: 'normal',
-      fontWeight: 'medium',
-      fontSize: ['10px', '18px'],
-      lineHeight: '110%',
-      textAlign: 'center',
-      fontFamily: `'Ubuntu'`,
-      textTransform: 'capitalize',
+      fontFamily: `'Inter',sans-serif`,
     },
   },
 });

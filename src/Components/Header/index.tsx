@@ -1,6 +1,11 @@
 import { Text, Box, Image, Heading, HStack, VStack } from '@chakra-ui/react';
+import { HeaderProps } from './Types/HeaderProps';
 
-export default function Header() {
+export default function Header({
+  sizeOfHeadingFont,
+  sizeOfTextFont,
+  paddingForLine,
+}: HeaderProps) {
   return (
     <HStack w="full" justifyContent="space-between" alignItems="center">
       <Box w="sm">
@@ -8,14 +13,16 @@ export default function Header() {
       </Box>
       <VStack
         w="container.md"
-        borderBottom="1px solid black"
+        borderBottom="0.1px solid #212326"
         gap={2}
-        pb={[0, 12]}
+        pb={paddingForLine || [5, 8, 12]}
       >
         <Heading color="primary">
-          <Text textStyle="headingText">Your Sale</Text>
+          <Text textStyle="headingText" fontSize={sizeOfHeadingFont}>
+            Your Sale
+          </Text>
         </Heading>
-        <Text textStyle="bodyText">
+        <Text textStyle="bodyText" fontSize={sizeOfTextFont}>
           Realize suas vendas de forma rápida e segura
         </Text>
       </VStack>

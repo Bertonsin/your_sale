@@ -8,45 +8,45 @@
     },
     {
       "name": "Globex Corporation",
-      "cnpj": "81.399.428/0001-50",
+      "cnpj": "64.236.578/0001-24",
       "state": "GO",
-      "city": "Anápolis"
+      "city": "Goiânia"
     },
     {
       "name": "Globex Corporation",
-      "cnpj": "58.003.089/0001-20",
+      "cnpj": "64.236.578/0001-24",
       "state": "GO",
-      "city": "Anápolis"
+      "city": "Goianapolis"
     },
     {
       "name": "Globex Corporation",
-      "cnpj": "21.045.989/0001-20",
-      "state": "GO",
-      "city": "Anápolis"
+      "cnpj": "64.236.578/0001-24",
+      "state": "SP",
+      "city": "São Paulo"
     },
     {
       "name": "Globex Corporation",
-      "cnpj": "87.617.984/0001-32",
-      "state": "GO",
-      "city": "Anápolis"
+      "cnpj": "64.236.578/0001-24",
+      "state": "RJ",
+      "city": "Rio de Janeiro"
     },
     {
       "name": "Globex Corporation",
-      "cnpj": "70.213.674/0001-50",
-      "state": "GO",
-      "city": "Anápolis"
+      "cnpj": "64.236.578/0001-24",
+      "state": "RS",
+      "city": "Gramado"
     },
     {
       "name": "Globex Corporation",
-      "cnpj": "46.672.384/0001-90",
-      "state": "GO",
-      "city": "Anápolis"
+      "cnpj": "64.236.578/0001-24",
+      "state": "RS",
+      "city": "Penha"
     },
     {
       "name": "Globex Corporation",
-      "cnpj": "32.708.476/0001-78",
+      "cnpj": "64.236.578/0001-24",
       "state": "GO",
-      "city": "Anápolis"
+      "city": "Alexânia"
     }
   ],
 
@@ -60,31 +60,31 @@
     {
       "product": "Notebook Acer 16' 12gb 512gb",
       "cost": "R$ 2500.00",
-      "stock": "20",
+      "stock": "25",
       "unitPrice": "R$ 5000.00"
     },
     {
       "product": "Notebook Acer 16' 12gb 512gb",
       "cost": "R$ 2500.00",
-      "stock": "20",
+      "stock": "30",
       "unitPrice": "R$ 5000.00"
     },
     {
       "product": "Notebook Acer 16' 12gb 512gb",
       "cost": "R$ 2500.00",
-      "stock": "20",
+      "stock": "10",
       "unitPrice": "R$ 5000.00"
     },
     {
       "product": "Notebook Acer 16' 12gb 512gb",
       "cost": "R$ 2500.00",
-      "stock": "20",
+      "stock": "5",
       "unitPrice": "R$ 5000.00"
     },
     {
       "product": "Notebook Acer 16' 12gb 512gb",
       "cost": "R$ 2500.00",
-      "stock": "20",
+      "stock": "40",
       "unitPrice": "R$ 5000.00"
     }
   ]

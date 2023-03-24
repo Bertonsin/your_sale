@@ -1,14 +1,19 @@
 import { ChakraProvider } from '@chakra-ui/react';
-import RoutesApp from '../routes';
+import { RouterProvider } from 'react-router-dom';
+import { router } from '../routes';
 import { customTheme } from '../themes';
 import '@fontsource/inter/400.css';
 import '@fontsource/inter/500.css';
+import '@fontsource/inter/600.css';
 import '@fontsource/ubuntu/700.css';
+import { OrderContextProvider } from '../contexts/orderContext';
 
 function App() {
   return (
     <ChakraProvider theme={customTheme}>
-      <RoutesApp />
+      <OrderContextProvider>
+        <RouterProvider router={router} />
+      </OrderContextProvider>
     </ChakraProvider>
   );
 }

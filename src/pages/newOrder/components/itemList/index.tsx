@@ -1,9 +1,11 @@
+/* eslint-disable react/no-array-index-key */
 import {
   Box,
   Container,
   Flex,
   FormControl,
   Grid,
+  HStack,
   Radio,
   RadioGroup,
   Text,
@@ -12,18 +14,20 @@ import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { useContext } from 'react';
 import { OrderContext } from '../../../../contexts/orderContext/Context/orderContext';
-import ClientItem from './clientItem';
-import { ClientItemProps } from './clientItem/Types/ClientItemProps';
+import FormModal from '../formNewOrder/formModal';
+import Item from './item';
+import { ItemProps } from './item/Types/ItemProps';
 
-export default function ClientList() {
-  const { data, isLoading } = useQuery<ClientItemProps[]>({
-    queryKey: ['clientList'],
+export default function ItemList() {
+  const { data, isLoading } = useQuery<ItemProps[]>({
+    queryKey: ['ItemList'],
     queryFn: async () => {
-      const response = await axios.get('http://localhost:3000/clients');
+      const response = await axios.get('http://localhost:3000/itens');
       return response.data;
     },
   });
-  const { setClient } = useContext(OrderContext);
+
+  const { setItem } = useContext(OrderContext);
 
   if (isLoading) {
     return <Box>Loading...</Box>;
@@ -33,21 +37,23 @@ export default function ClientList() {
     <Container maxW="container.xl" p={0}>
       <Grid
         justifyContent="space-around"
-        templateColumns="1.5fr repeat(3,1fr)"
+        templateColumns="3fr 2.7fr 1fr"
         textStyle="listText"
         textAlign="center"
         color="#FFF"
         w="full"
         bg="#263238"
+        gap={20}
         p={5}
         borderRadius="30px 30px 0px 0px"
       >
-        <Text>Nome</Text>
-        <Text>CNPJ</Text>
-        <Text>Estado</Text>
-        <Text>Cidade</Text>
+        <Text>Produto</Text>
+        <HStack w="full" justifyContent="space-around">
+          <Text>Custo</Text>
+          <Text>Estoque</Text>
+        </HStack>
+        <Text>Custo Unitário</Text>
       </Grid>
-
       <FormControl>
         <Flex
           border="3px solid #000"
@@ -60,26 +66,24 @@ export default function ClientList() {
             {data &&
               data.map((item, index) => {
                 return (
-                  <Box key={item.city} bg={index % 2 === 0 ? '#CCC' : '#FFF'}>
+                  <Box key={item.stock} bg={index % 2 === 0 ? '#CCC' : '#FFF'}>
                     <Radio
+                      value={`${item.product} ${item.cost} ${item.stock} ${item.unitPrice}`}
                       borderRadius="none"
                       borderColor="black"
-                      colorScheme="blue"
-                      value={`${item.name} ${item.cnpj} ${item.state} ${item.city}`}
                       w="full"
-                      name="marcou"
                       py={2}
                       pl={10}
                       onChange={() => {
-                        setClient(item);
+                        setItem(item);
                       }}
                     >
-                      <ClientItem
-                        backgroundColor={index % 2 === 0 ? '#CCC' : '#FFF'}
-                        name={item.name}
-                        cnpj={item.cnpj}
-                        state={item.state}
-                        city={item.city}
+                      <Item
+                        key={index}
+                        product={item.product}
+                        cost={item.cost}
+                        stock={item.stock}
+                        unitPrice={item.unitPrice}
                       />
                     </Radio>
                   </Box>
@@ -88,6 +92,7 @@ export default function ClientList() {
           </RadioGroup>
         </Flex>
       </FormControl>
+      <FormModal />
     </Container>
   );
 }

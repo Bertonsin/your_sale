@@ -1,6 +1,6 @@
 export type ItemProps = {
   product: string;
-  cost: string;
-  stock: string;
-  unitPrice: string;
+  cost: number;
+  stock: number;
+  unitPrice: number;
 };

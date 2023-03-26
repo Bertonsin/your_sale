@@ -53,39 +53,39 @@
   "itens": [
     {
       "product": "Notebook Acer 16' 12gb 512gb",
-      "cost": "R$ 2500.00",
-      "stock": "20",
-      "unitPrice": "R$ 5000.00"
+      "cost": 2500.0,
+      "stock": 20,
+      "unitPrice": 5000.0
     },
     {
       "product": "Notebook Acer 16' 12gb 512gb",
-      "cost": "R$ 2500.00",
-      "stock": "25",
-      "unitPrice": "R$ 5000.00"
+      "cost": 2500.0,
+      "stock": 25,
+      "unitPrice": 5000.0
     },
     {
       "product": "Notebook Acer 16' 12gb 512gb",
-      "cost": "R$ 2500.00",
-      "stock": "30",
-      "unitPrice": "R$ 5000.00"
+      "cost": 2500.0,
+      "stock": 30,
+      "unitPrice": 5000.0
     },
     {
       "product": "Notebook Acer 16' 12gb 512gb",
-      "cost": "R$ 2500.00",
-      "stock": "10",
-      "unitPrice": "R$ 5000.00"
+      "cost": 2500.0,
+      "stock": 10,
+      "unitPrice": 5000.0
     },
     {
       "product": "Notebook Acer 16' 12gb 512gb",
-      "cost": "R$ 2500.00",
-      "stock": "5",
-      "unitPrice": "R$ 5000.00"
+      "cost": 2500.0,
+      "stock": 5,
+      "unitPrice": 5000.0
     },
     {
       "product": "Notebook Acer 16' 12gb 512gb",
-      "cost": "R$ 2500.00",
-      "stock": "40",
-      "unitPrice": "R$ 5000.00"
+      "cost": 2500.0,
+      "stock": 40,
+      "unitPrice": 5000.0
     }
   ]
 }

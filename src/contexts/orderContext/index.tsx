@@ -1,32 +1,33 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable import/prefer-default-export */
-import { useDisclosure } from '@chakra-ui/react';
 import { useMemo, useState } from 'react';
-import { ClientItemProps } from '../../pages/newOrder/components/clientList/clientItem/Types/ClientItemProps';
-import { ItemProps } from '../../pages/newOrder/components/itemList/item/Types/ItemProps';
 import { OrderContext } from './Context/orderContext';
+import { FormDataProps } from './Types/orderContextProps';
 import { OrderContextProviderProps } from './Types/orderContextProviderProps';
 
 export function OrderContextProvider({ children }: OrderContextProviderProps) {
-  const [client, setClient] = useState<ClientItemProps>();
-  const [item, setItem] = useState<ItemProps>();
-  const {
-    onOpen: openModal,
-    isOpen: isModalOpen,
-    onClose: closeModal,
-  } = useDisclosure();
+  const formDataTemplate: FormDataProps = {
+    client: null,
+    item: null,
+    itemInfo: null,
+  };
+  const [formData, setFormData] = useState<FormDataProps>(formDataTemplate);
+  const [cart, setCart] = useState<FormDataProps[]>([]);
+
+  const updateField = (key: string, value: object) => {
+    setFormData((prev) => {
+      return { ...prev, [key]: value };
+    });
+  };
 
   const selectedData = useMemo(
     () => ({
-      client,
-      setClient,
-      item,
-      setItem,
-      openModal,
-      isModalOpen,
-      closeModal,
+      updateField,
+      formData,
+      cart,
+      setCart,
     }),
-    [client, item, closeModal, openModal, isModalOpen]
+    [formData, cart]
   );
   return (
     <OrderContext.Provider value={selectedData}>

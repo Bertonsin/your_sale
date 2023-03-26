@@ -1,18 +1,19 @@
 /* eslint-disable react/no-array-index-key */
 import {
   Box,
+  Checkbox,
+  CheckboxGroup,
   Container,
   Flex,
   FormControl,
   Grid,
   HStack,
-  Radio,
-  RadioGroup,
   Text,
 } from '@chakra-ui/react';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { useContext } from 'react';
+import { ModalContext } from '../../../../contexts/modalContext/context/modalContext';
 import { OrderContext } from '../../../../contexts/orderContext/Context/orderContext';
 import FormModal from '../formNewOrder/formModal';
 import Item from './item';
@@ -27,7 +28,8 @@ export default function ItemList() {
     },
   });
 
-  const { setItem } = useContext(OrderContext);
+  const { updateField, formData } = useContext(OrderContext);
+  const { openFormModal } = useContext(ModalContext);
 
   if (isLoading) {
     return <Box>Loading...</Box>;
@@ -62,21 +64,25 @@ export default function ItemList() {
           justifyContent="center"
           alignItems="center"
         >
-          <RadioGroup w="full">
+          <CheckboxGroup value={[`${formData?.item?.stock}`]}>
             {data &&
               data.map((item, index) => {
                 return (
-                  <Box key={item.stock} bg={index % 2 === 0 ? '#CCC' : '#FFF'}>
-                    <Radio
-                      value={`${item.product} ${item.cost} ${item.stock} ${item.unitPrice}`}
+                  <Box
+                    key={item.stock}
+                    bg={index % 2 === 0 ? '#CCC' : '#FFF'}
+                    w="full"
+                    onClick={openFormModal}
+                  >
+                    <Checkbox
+                      value={`${item.stock}`}
                       borderRadius="none"
                       borderColor="black"
+                      checked={formData.item?.product === item.product}
+                      onChange={() => updateField('item', item)}
                       w="full"
                       py={2}
                       pl={10}
-                      onChange={() => {
-                        setItem(item);
-                      }}
                     >
                       <Item
                         key={index}
@@ -85,11 +91,11 @@ export default function ItemList() {
                         stock={item.stock}
                         unitPrice={item.unitPrice}
                       />
-                    </Radio>
+                    </Checkbox>
                   </Box>
                 );
               })}
-          </RadioGroup>
+          </CheckboxGroup>
         </Flex>
       </FormControl>
       <FormModal />

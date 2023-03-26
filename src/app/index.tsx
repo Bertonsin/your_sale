@@ -7,13 +7,16 @@ import '@fontsource/inter/500.css';
 import '@fontsource/inter/600.css';
 import '@fontsource/ubuntu/700.css';
 import { OrderContextProvider } from '../contexts/orderContext';
+import { ModalContextProvider } from '../contexts/modalContext';
 
 function App() {
   return (
     <ChakraProvider theme={customTheme}>
-      <OrderContextProvider>
-        <RouterProvider router={router} />
-      </OrderContextProvider>
+      <ModalContextProvider>
+        <OrderContextProvider>
+          <RouterProvider router={router} />
+        </OrderContextProvider>
+      </ModalContextProvider>
     </ChakraProvider>
   );
 }

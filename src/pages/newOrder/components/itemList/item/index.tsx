@@ -4,7 +4,7 @@ import { ItemProps } from './Types/ItemProps';
 export default function Item({ cost, product, stock, unitPrice }: ItemProps) {
   return (
     <Grid
-      templateColumns="3.5fr 2.5fr 1fr"
+      templateColumns="3.5fr 3fr 1fr"
       color="#212326"
       gap={20}
       ml={10}
@@ -21,10 +21,10 @@ export default function Item({ cost, product, stock, unitPrice }: ItemProps) {
         spacing={10}
         ml="-10"
       >
-        <Text>{cost}</Text>
+        <Text>R${cost},00</Text>
         <Text>{stock}</Text>
       </HStack>
-      <Text>{unitPrice}</Text>
+      <Text>R${unitPrice},00</Text>
     </Grid>
   );
 }

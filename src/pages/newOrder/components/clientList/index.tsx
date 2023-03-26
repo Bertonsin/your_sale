@@ -1,11 +1,11 @@
 import {
   Box,
+  Checkbox,
+  CheckboxGroup,
   Container,
   Flex,
   FormControl,
   Grid,
-  Radio,
-  RadioGroup,
   Text,
 } from '@chakra-ui/react';
 import { useQuery } from '@tanstack/react-query';
@@ -23,7 +23,7 @@ export default function ClientList() {
       return response.data;
     },
   });
-  const { setClient } = useContext(OrderContext);
+  const { updateField, formData } = useContext(OrderContext);
 
   if (isLoading) {
     return <Box>Loading...</Box>;
@@ -56,36 +56,42 @@ export default function ClientList() {
           justifyContent="center"
           alignItems="center"
         >
-          <RadioGroup w="full">
+          <CheckboxGroup
+            value={[
+              `${formData.client?.name} ${formData.client?.cnpj} ${formData.client?.state} ${formData.client?.city}`,
+            ]}
+          >
             {data &&
               data.map((item, index) => {
                 return (
-                  <Box key={item.city} bg={index % 2 === 0 ? '#CCC' : '#FFF'}>
-                    <Radio
+                  <Box
+                    key={item.city}
+                    bg={index % 2 === 0 ? '#CCC' : '#FFF'}
+                    w="full"
+                  >
+                    <Checkbox
                       borderRadius="none"
                       borderColor="black"
                       colorScheme="blue"
                       value={`${item.name} ${item.cnpj} ${item.state} ${item.city}`}
+                      onChange={() => updateField('client', item)}
+                      checked={formData.client?.city === item.city}
                       w="full"
                       name="marcou"
                       py={2}
                       pl={10}
-                      onChange={() => {
-                        setClient(item);
-                      }}
                     >
                       <ClientItem
-                        backgroundColor={index % 2 === 0 ? '#CCC' : '#FFF'}
                         name={item.name}
                         cnpj={item.cnpj}
                         state={item.state}
                         city={item.city}
                       />
-                    </Radio>
+                    </Checkbox>
                   </Box>
                 );
               })}
-          </RadioGroup>
+          </CheckboxGroup>
         </Flex>
       </FormControl>
     </Container>

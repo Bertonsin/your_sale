@@ -1,114 +1,49 @@
 import {
   Button,
-  FormControl,
-  FormLabel,
-  Input,
   Modal,
   ModalBody,
-  ModalCloseButton,
   ModalContent,
   ModalFooter,
   ModalHeader,
   ModalOverlay,
+  useToast,
   VStack,
 } from '@chakra-ui/react';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
+import { FormNewOrder } from '..';
+import { ItemFormContext } from '../../../../../contexts/itemformContext/context/itemFormContext';
+import { ModalContext } from '../../../../../contexts/modalContext/context/modalContext';
 import { OrderContext } from '../../../../../contexts/orderContext/Context/orderContext';
 
 export default function FormModal() {
-  const [unitPrice, setUnitPrice] = useState(0);
-  const [cost, setCost] = useState(0);
-  const [discount, setDiscount] = useState(0);
-  const [addition, setAddition] = useState(0);
-  const [quantity, setQuantity] = useState(0);
-  const [total, setTotal] = useState(0);
-
-  const { item, isModalOpen, closeModal } = useContext(OrderContext);
+  const { formData, setCart, cart } = useContext(OrderContext);
+  const { closeFormModal, isFormModalOpen } = useContext(ModalContext);
+  const { setUnitPrice, setQuantity, setDiscount, setAddition } =
+    useContext(ItemFormContext);
+  const productUnitPrice = formData?.item?.unitPrice.toString() || '';
+  const successToast = useToast();
 
   return (
     <Modal
-      closeOnOverlayClick={false}
-      isOpen={isModalOpen}
-      onClose={closeModal}
-      size="3xl"
+      isOpen={isFormModalOpen}
+      size="4xl"
+      onClose={closeFormModal}
+      onCloseComplete={() => {
+        setUnitPrice(productUnitPrice);
+        setQuantity('1');
+        setDiscount('0');
+        setAddition('0');
+      }}
     >
       <ModalOverlay />
-      <ModalContent>
-        <ModalHeader>{(item && item.product) || 'Nome do produto'}</ModalHeader>
-        <ModalCloseButton />
-        <ModalBody pb={6}>
+      <ModalContent borderRadius={20}>
+        <ModalHeader fontFamily="Inter" fontWeight="600" color="primary">
+          Nome do produto
+        </ModalHeader>
+
+        <ModalBody pb={6} textStyle="listText">
           <VStack spacing={5}>
-            <FormControl
-              boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
-              borderRadius="12px"
-              p="12px"
-            >
-              <FormLabel>Preço Unitário</FormLabel>
-              <Input
-                type="number"
-                onChange={(event) => setUnitPrice(+event.target.value)}
-              />
-            </FormControl>
-
-            <FormControl
-              boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
-              borderRadius="12px"
-              p="12px"
-            >
-              <FormLabel>Custo</FormLabel>
-              <Input
-                type="number"
-                onChange={(event) => setCost(+event.target.value)}
-              />
-            </FormControl>
-
-            <FormControl
-              boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
-              borderRadius="12px"
-              p="12px"
-            >
-              <FormLabel>Desconto(%)</FormLabel>
-              <Input
-                placeholder="Percentual de desconto"
-                type="number"
-                onChange={(event) => setDiscount(+event.target.value)}
-              />
-            </FormControl>
-
-            <FormControl
-              boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
-              borderRadius="12px"
-              p="12px"
-            >
-              <FormLabel>Acréscimo(%)</FormLabel>
-              <Input
-                placeholder="Percentual de acréscimo"
-                type="number"
-                onChange={(event) => setAddition(+event.target.value)}
-              />
-            </FormControl>
-
-            <FormControl
-              boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
-              borderRadius="12px"
-              p="12px"
-            >
-              <FormLabel>Quantidade</FormLabel>
-              <Input
-                placeholder="Quantidade de produto"
-                type="number"
-                onChange={(event) => setQuantity(+event.target.value)}
-              />
-            </FormControl>
-
-            <FormControl
-              boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
-              borderRadius="12px"
-              p="12px"
-            >
-              <FormLabel>Valor total</FormLabel>
-              <Input isDisabled value={`R$${cost},00`} type="text" />
-            </FormControl>
+            <FormNewOrder />
           </VStack>
         </ModalBody>
 
@@ -118,10 +53,30 @@ export default function FormModal() {
           flexDirection="row"
           w="full"
         >
-          <Button variant="outline" onClick={closeModal}>
+          <Button
+            variant="outline"
+            onClick={() => {
+              closeFormModal();
+            }}
+          >
             Voltar
           </Button>
-          <Button type="submit" variant="solid">
+          <Button
+            type="submit"
+            variant="solid"
+            onClick={() => {
+              setCart([...cart, { ...formData }]);
+              closeFormModal();
+              successToast({
+                description: `notebook ${formData?.item?.product} adicionado no carrinho!`,
+                status: 'success',
+                position: 'top-right',
+                duration: 9000,
+                variant: 'subtle',
+                isClosable: true,
+              });
+            }}
+          >
             Continuar
           </Button>
         </ModalFooter>

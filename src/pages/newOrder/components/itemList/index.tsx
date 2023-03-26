@@ -85,6 +85,7 @@ export default function ItemList() {
                       pl={10}
                     >
                       <Item
+                        id={item.id}
                         key={index}
                         product={item.product}
                         cost={item.cost}

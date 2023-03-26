@@ -13,6 +13,7 @@ export function OrderContextProvider({ children }: OrderContextProviderProps) {
   };
   const [formData, setFormData] = useState<FormDataProps>(formDataTemplate);
   const [cart, setCart] = useState<FormDataProps[]>([]);
+  const [orderList, setOrderList] = useState<FormDataProps[]>([]);
 
   const updateField = (key: string, value: object) => {
     setFormData((prev) => {
@@ -26,8 +27,10 @@ export function OrderContextProvider({ children }: OrderContextProviderProps) {
       formData,
       cart,
       setCart,
+      orderList,
+      setOrderList,
     }),
-    [formData, cart]
+    [formData, cart, orderList]
   );
   return (
     <OrderContext.Provider value={selectedData}>

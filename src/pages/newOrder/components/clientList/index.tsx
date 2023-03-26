@@ -82,6 +82,7 @@ export default function ClientList() {
                       pl={10}
                     >
                       <ClientItem
+                        id={item.id}
                         name={item.name}
                         cnpj={item.cnpj}
                         state={item.state}

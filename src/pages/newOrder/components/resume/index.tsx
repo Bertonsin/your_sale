@@ -8,7 +8,6 @@ export default function Resume() {
   return (
     <VStack spacing={10} w="container.lg">
       <Box
-        key={formData.client?.city}
         textStyle="bodyText"
         padding={5}
         w="full"
@@ -39,7 +38,7 @@ export default function Resume() {
         return (
           <HStack
             w="full"
-            key={formData.client?.city}
+            key={item.item?.id}
             textStyle="bodyText"
             padding={5}
             fontSize={['8px', '14px']}
@@ -53,7 +52,7 @@ export default function Resume() {
                   <Text color="#191919" fontWeight={700}>
                     Nome do produto
                   </Text>
-                  <Text>{item.item?.product}</Text>
+                  <Text>{item.item?.id}</Text>
 
                   <Text color="#191919" fontWeight={700}>
                     Custo

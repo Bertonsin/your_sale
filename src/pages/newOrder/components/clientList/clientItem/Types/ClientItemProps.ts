@@ -3,4 +3,5 @@ export type ClientItemProps = {
   cnpj: string;
   state: string;
   city: string;
+  id: number;
 };

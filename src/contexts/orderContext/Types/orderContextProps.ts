@@ -6,6 +6,8 @@ export type OrderContextProps = {
   formData: FormDataProps;
   cart: FormDataProps[];
   setCart: (cartInfo: FormDataProps[]) => void;
+  orderList: FormDataProps[];
+  setOrderList: (orderList: FormDataProps[]) => void;
 };
 
 export type FormDataProps = {

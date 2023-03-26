@@ -3,4 +3,5 @@ export type ItemProps = {
   cost: number;
   stock: number;
   unitPrice: number;
+  id: number;
 };

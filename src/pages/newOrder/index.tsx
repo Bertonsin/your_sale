@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import {
   Box,
   Button,
@@ -36,7 +37,7 @@ export default function NewOrder() {
   const navigate = useNavigate();
 
   const { currentComponent, changeStep, currentStep } = useForm(ListComponents);
-  const { formData, cart } = useContext(OrderContext);
+  const { formData, cart, setOrderList, orderList } = useContext(OrderContext);
   const { openCartModal } = useContext(ModalContext);
 
   return (
@@ -111,6 +112,7 @@ export default function NewOrder() {
                   variant="solid"
                   onClick={(e) => {
                     localStorage.setItem('allData', JSON.stringify(cart));
+
                     navigate(0);
                     changeStep(currentStep - 2, e);
                   }}

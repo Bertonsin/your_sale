@@ -1,6 +1,6 @@
 import { FormDataProps } from '../../../contexts/orderContext/Types/orderContextProps';
 
-export type StepChangerProps = {
+export type HandleStepChangeProps = {
   changeStep: (step: number, event: React.FormEvent<HTMLButtonElement>) => void;
   formData: FormDataProps;
   currentStep: number;

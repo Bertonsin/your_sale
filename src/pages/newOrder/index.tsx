@@ -1,24 +1,12 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import {
-  Box,
-  Button,
-  Container,
-  Flex,
-  FormControl,
-  HStack,
-  VStack,
-} from '@chakra-ui/react';
-import { useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Box, Container, HStack, VStack } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
 import Card from '../../Components/Card';
 import Header from '../../Components/Header';
 import StepsItem from '../../Components/StepsItem';
 import { ItemFormContextProvider } from '../../contexts/itemformContext';
-import { ModalContext } from '../../contexts/modalContext/context/modalContext';
-import { OrderContext } from '../../contexts/orderContext/Context/orderContext';
 import { useForm } from '../../hooks/useForm';
-import { addOrder } from '../../services/addOrder';
-import { StepChanger } from '../../services/stepChanger/stepChanger';
+import ButtonsContainer from './components/ButtonsContainer';
 import CartModal from './components/cartModal';
 import ClientList from './components/clientList';
 import ItemList from './components/itemList';
@@ -35,11 +23,8 @@ export default function NewOrder() {
     <ItemList key="item" />,
     <Resume key="resume" />,
   ];
-  const navigate = useNavigate();
 
   const { currentComponent, changeStep, currentStep } = useForm(ListComponents);
-  const { formData, cart, setCart } = useContext(OrderContext);
-  const { openCartModal } = useContext(ModalContext);
 
   return (
     <ItemFormContextProvider>
@@ -96,75 +81,13 @@ export default function NewOrder() {
             })}
           </HStack>
           <Box w="full">{currentComponent}</Box>
-          <FormControl>
-            {currentComponent === ListComponents[2] ? (
-              <Flex
-                w="full"
-                textStyle="buttonText"
-                justifyContent="space-between"
-                mt={5}
-                mb={5}
-              >
-                <Button
-                  variant="outline"
-                  onClick={(e) => changeStep(currentStep - 1, e)}
-                >
-                  Voltar
-                </Button>
 
-                <Button
-                  type="submit"
-                  variant="solid"
-                  onClick={(e) => {
-                    addOrder(cart);
-                    navigate('/');
-                    setCart([]);
-                    changeStep(currentStep - 2, e);
-                  }}
-                >
-                  Salvar
-                </Button>
-              </Flex>
-            ) : (
-              <Flex
-                w="full"
-                textStyle="buttonText"
-                justifyContent="space-between"
-                mt={5}
-                mb={5}
-              >
-                <Button
-                  variant="outline"
-                  onClick={(e) => changeStep(currentStep - 1, e)}
-                >
-                  Voltar
-                </Button>
-
-                {cart?.length > 0 && currentStep + 1 === 2 && (
-                  <Button variant="outline" onClick={openCartModal}>
-                    Carrinho
-                  </Button>
-                )}
-                <Button
-                  type="submit"
-                  variant="solid"
-                  onClick={(event) => {
-                    StepChanger({
-                      changeStep,
-                      formData,
-                      currentStep,
-                      currentComponent,
-                      event,
-                      ListComponents,
-                      cart,
-                    });
-                  }}
-                >
-                  Continuar
-                </Button>
-              </Flex>
-            )}
-          </FormControl>
+          <ButtonsContainer
+            ListComponents={ListComponents}
+            changeStep={changeStep}
+            currentComponent={currentComponent}
+            currentStep={currentStep}
+          />
         </VStack>
       </Container>
       <CartModal />

@@ -1,6 +1,6 @@
-import { StepChangerProps } from './Types/stepChangerProps';
+import { HandleStepChangeProps } from './Types/stepChangerProps';
 
-export function StepChanger({
+export function HandleStepChange({
   changeStep,
   formData,
   currentStep,
@@ -8,7 +8,7 @@ export function StepChanger({
   event,
   ListComponents,
   cart,
-}: StepChangerProps) {
+}: HandleStepChangeProps) {
   if (formData.client !== null && currentComponent === ListComponents[0]) {
     changeStep(currentStep + 1, event);
   }

@@ -78,7 +78,7 @@ export default function OrderDetails() {
             padding={5}
             fontSize={['12px', '14px']}
             justifyContent="space-between"
-            boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25);"
+            boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
             borderRadius={12}
           >
             <Flex w="full">

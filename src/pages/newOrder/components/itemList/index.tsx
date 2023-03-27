@@ -13,6 +13,7 @@ import {
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { useContext } from 'react';
+import SkeletonLoading from '../../../../Components/SkeletonLoading';
 import { ModalContext } from '../../../../contexts/modalContext/context/modalContext';
 import { OrderContext } from '../../../../contexts/orderContext/Context/orderContext';
 import FormModal from '../formNewOrder/formModal';
@@ -32,7 +33,7 @@ export default function ItemList() {
   const { openFormModal } = useContext(ModalContext);
 
   if (isLoading) {
-    return <Box>Loading...</Box>;
+    return <SkeletonLoading />;
   }
 
   return (

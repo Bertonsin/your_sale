@@ -6,11 +6,13 @@ import {
   Flex,
   FormControl,
   Grid,
+  SkeletonCircle,
   Text,
 } from '@chakra-ui/react';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { useContext } from 'react';
+import SkeletonLoading from '../../../../Components/SkeletonLoading';
 import { OrderContext } from '../../../../contexts/orderContext/Context/orderContext';
 import ClientItem from './clientItem';
 import { ClientItemProps } from './clientItem/Types/ClientItemProps';
@@ -26,7 +28,7 @@ export default function ClientList() {
   const { updateField, formData } = useContext(OrderContext);
 
   if (isLoading) {
-    return <Box>Loading...</Box>;
+    return <SkeletonLoading SkeletonListType="clientList" />;
   }
 
   return (

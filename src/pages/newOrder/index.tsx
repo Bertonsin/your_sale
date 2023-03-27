@@ -139,7 +139,7 @@ export default function NewOrder() {
                   Voltar
                 </Button>
 
-                {cart.length > 0 && currentStep + 1 === 2 && (
+                {cart?.length > 0 && currentStep + 1 === 2 && (
                   <Button variant="outline" onClick={openCartModal}>
                     Carrinho
                   </Button>

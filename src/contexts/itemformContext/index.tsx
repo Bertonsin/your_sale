@@ -13,7 +13,7 @@ export function ItemFormContextProvider({ children }: ItemFormProviderProps) {
   const [quantity, setQuantity] = useState((1).toString() || '1');
   const [unitPrice, setUnitPrice] = useState('0');
   const [total, setTotal] = useState(0);
-  const cost = formData.item?.cost?.toString() || '0';
+  const cost = formData?.item?.cost?.toString() || '0';
 
   const selectedData = useMemo(
     () => ({

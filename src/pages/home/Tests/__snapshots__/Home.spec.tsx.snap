@@ -3,16 +3,16 @@
 exports[`home screen > should display a Header and a Banner 1`] = `
 <div>
   <div
-    class="chakra-container css-5ypx3o"
+    class="chakra-container css-1tusmyk"
   >
     <div
-      class="chakra-stack css-fd20l"
+      class="chakra-stack css-n07rzw"
     >
       <div
-        class="chakra-stack css-1d4fi7s"
+        class="chakra-stack css-7ffuev"
       >
         <div
-          class="css-mxhe7w"
+          class="css-1tw5ajb"
         >
           <img
             class="chakra-image css-0"
@@ -20,7 +20,7 @@ exports[`home screen > should display a Header and a Banner 1`] = `
           />
         </div>
         <div
-          class="chakra-stack css-1pfi9rq"
+          class="chakra-stack css-izft5u"
         >
           <h2
             class="chakra-heading css-1p9c8n6"
@@ -38,7 +38,7 @@ exports[`home screen > should display a Header and a Banner 1`] = `
           </p>
         </div>
         <div
-          class="css-mxhe7w"
+          class="css-1tw5ajb"
         >
           <img
             class="chakra-image css-0"
@@ -47,10 +47,10 @@ exports[`home screen > should display a Header and a Banner 1`] = `
         </div>
       </div>
       <div
-        class="chakra-stack css-1epox5h"
+        class="chakra-stack css-1yih676"
       >
         <div
-          class="css-fi0oaz"
+          class="css-k59f1h"
         >
           <div
             class="css-128iqam"
@@ -82,72 +82,62 @@ exports[`home screen > should display a Header and a Banner 1`] = `
         <div
           class="chakra-stack css-majmq"
         >
-          <a
-            href="/newOrder"
-            style="width: 100%; height: 100%; margin-right: 10em;"
+          <button
+            aria-label="card"
+            class="chakra-button css-xlew0l"
+            type="button"
           >
-            <button
-              aria-label="card"
-              class="chakra-button css-82b7o0"
-              type="button"
+            <div
+              class="chakra-stack css-k9twck"
             >
+              <img
+                class="chakra-image css-1t9pz9x"
+                src="/newOrder.png"
+              />
               <div
-                class="chakra-stack css-k9twck"
+                class="css-1eif5ff"
               >
-                <img
-                  class="chakra-image css-1t9pz9x"
-                  src="/newOrder.png"
-                />
-                <div
-                  class="css-1eif5ff"
+                <p
+                  class="chakra-text css-1g6pthj"
                 >
-                  <p
-                    class="chakra-text css-1g6pthj"
-                  >
-                    Nova Venda
-                  </p>
-                  <p
-                    class="chakra-text css-1ncuk4g"
-                  >
-                    Inicie uma nova venda
-                  </p>
-                </div>
+                  Nova Venda
+                </p>
+                <p
+                  class="chakra-text css-1ncuk4g"
+                >
+                  Inicie uma nova venda
+                </p>
               </div>
-            </button>
-          </a>
-          <a
-            href="/orderList"
-            style="width: 100%; height: 100%; margin-right: 10em;"
+            </div>
+          </button>
+          <button
+            aria-label="card"
+            class="chakra-button css-82b7o0"
+            type="button"
           >
-            <button
-              aria-label="card"
-              class="chakra-button css-82b7o0"
-              type="button"
+            <div
+              class="chakra-stack css-k9twck"
             >
+              <img
+                class="chakra-image css-1t9pz9x"
+                src="/orderList.png"
+              />
               <div
-                class="chakra-stack css-k9twck"
+                class="css-1eif5ff"
               >
-                <img
-                  class="chakra-image css-1t9pz9x"
-                  src="/orderList.png"
-                />
-                <div
-                  class="css-1eif5ff"
+                <p
+                  class="chakra-text css-1g6pthj"
                 >
-                  <p
-                    class="chakra-text css-1g6pthj"
-                  >
-                    Nova Venda
-                  </p>
-                  <p
-                    class="chakra-text css-1ncuk4g"
-                  >
-                    Inicie uma nova venda
-                  </p>
-                </div>
+                  Lista de pedidos
+                </p>
+                <p
+                  class="chakra-text css-1ncuk4g"
+                >
+                  Ver pedidos lançados
+                </p>
               </div>
-            </button>
-          </a>
+            </div>
+          </button>
         </div>
       </div>
     </div>

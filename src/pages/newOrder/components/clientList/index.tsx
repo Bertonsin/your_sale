@@ -30,10 +30,10 @@ export default function ClientList() {
   }
 
   return (
-    <Container maxW="container.xl" p={0}>
+    <Container maxW="container.xl" p={0} w={['sm', 'container.lg', 'full']}>
       <Grid
         justifyContent="space-around"
-        templateColumns="1.5fr repeat(3,1fr)"
+        templateColumns={['2fr 2fr', '1.5fr repeat(3,1fr)']}
         textStyle="listText"
         textAlign="center"
         color="#FFF"

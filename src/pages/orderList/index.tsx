@@ -56,7 +56,7 @@ export default function OrderList() {
         <Container maxW="container.xl" p={0}>
           <Grid
             justifyContent="space-around"
-            templateColumns="repeat(5,1fr)"
+            templateColumns={['2fr 2fr', 'repeat(5,1fr)']}
             textStyle="listText"
             textAlign="center"
             color="#FFF"
@@ -96,7 +96,7 @@ export default function OrderList() {
                       <Grid
                         w="full"
                         py={2}
-                        templateColumns="repeat(5,1fr)"
+                        templateColumns={['2fr 2fr', 'repeat(5,1fr)']}
                         color="#212326"
                       >
                         <Text color="#263238" fontWeight={600}>

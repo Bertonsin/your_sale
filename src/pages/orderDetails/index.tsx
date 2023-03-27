@@ -49,7 +49,7 @@ export default function OrderDetails() {
             textStyle="bodyText"
             padding={5}
             w="full"
-            fontSize={['8px', '14px']}
+            fontSize={['12px', '14px']}
             boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25);"
             borderRadius={12}
           >
@@ -76,7 +76,7 @@ export default function OrderDetails() {
             w="full"
             textStyle="bodyText"
             padding={5}
-            fontSize={['8px', '14px']}
+            fontSize={['12px', '14px']}
             justifyContent="space-between"
             boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25);"
             borderRadius={12}

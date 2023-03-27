@@ -9,10 +9,10 @@ export default function ClientItem({
 }: ClientItemProps) {
   return (
     <Grid
-      templateColumns="1.6fr 1.2fr 1.25fr 1.4fr"
+      templateColumns={['2fr 2fr', '1.6fr 1.2fr 1.25fr 1.4fr']}
       color="#212326"
-      gap={10}
-      ml={10}
+      gap={[0, 10]}
+      ml={[0, 10]}
       textStyle="listText"
       w="full"
     >

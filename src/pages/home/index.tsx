@@ -5,13 +5,17 @@ import TutorialTexts from './Components/tutorialTexts';
 
 export default function Home() {
   return (
-    <Container padding={0} maxW="container.xl">
+    <Container
+      padding={0}
+      maxW="container.xl"
+      w={['sm', 'container.lg', 'container.xl']}
+    >
       <VStack
         h="100svh"
         w="full"
         justifyContent="center"
         alignItems="center"
-        spacing={10}
+        spacing={[0, 10]}
       >
         <Header />
         <HStack
@@ -26,7 +30,7 @@ export default function Home() {
           }}
           alignItems="center"
           w="full"
-          gap={10}
+          gap={[0, 10]}
         >
           <TutorialTexts />
           <CardButton />

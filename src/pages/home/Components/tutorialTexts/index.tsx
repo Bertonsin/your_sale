@@ -2,7 +2,7 @@ import { Box, Text } from '@chakra-ui/react';
 
 export default function TutorialTexts() {
   return (
-    <Box w="container.sm" textStyle="bodyText">
+    <Box w={['sm', 'container.sm']} textStyle="bodyText">
       <Box mb={8} color="#797979">
         <Text>
           Voce podera iniciar sua venda clicando em

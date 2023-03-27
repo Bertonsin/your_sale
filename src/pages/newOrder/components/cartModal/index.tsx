@@ -26,7 +26,7 @@ export default function CartModal() {
       size="4xl"
       scrollBehavior="inside"
     >
-      <ModalContent borderRadius={20}>
+      <ModalContent borderRadius={20} width="full">
         <ModalHeader color="primary">Carrinho</ModalHeader>
         <ModalCloseButton />
         <ModalBody>
@@ -39,7 +39,7 @@ export default function CartModal() {
                     textStyle="bodyText"
                     padding={5}
                     w="full"
-                    fontSize={['8px', '14px']}
+                    fontSize={['18px', '14px']}
                     boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25);"
                     borderRadius={12}
                   >

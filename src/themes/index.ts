@@ -34,7 +34,7 @@ export const customTheme = extendTheme({
     bodyText: {
       fontStyle: 'normal',
       fontWeight: '400',
-      fontSize: ['10px', '15px', '18px'],
+      fontSize: ['16px', '18px'],
       lineHeight: '160%',
       textAlign: ['center', 'center', 'justify'],
       fontFamily: `'Inter', sans-serif`,
@@ -42,7 +42,7 @@ export const customTheme = extendTheme({
     headingText: {
       fontStyle: 'normal',
       fontWeight: '700',
-      fontSize: ['40px', '60px', '80px'],
+      fontSize: ['60px', '90px', '80px'],
       lineHeight: '110%',
       textAlign: ['center', 'center', 'justify'],
       fontFamily: `'Ubuntu'`,
@@ -50,7 +50,7 @@ export const customTheme = extendTheme({
     listText: {
       fontStyle: 'normal',
       fontWeight: '500',
-      fontSize: ['8px', '12px', '16px'],
+      fontSize: ['18px', '16px'],
       textAlign: 'center',
       fontFamily: `'Inter',sans-serif`,
     },

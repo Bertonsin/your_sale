@@ -37,17 +37,21 @@ export default function NewOrder() {
   const navigate = useNavigate();
 
   const { currentComponent, changeStep, currentStep } = useForm(ListComponents);
-  const { formData, cart, setOrderList, orderList } = useContext(OrderContext);
+  const { formData, cart } = useContext(OrderContext);
   const { openCartModal } = useContext(ModalContext);
 
   return (
     <ItemFormContextProvider>
-      <Container p={0} maxW="container.lg">
+      <Container
+        p={0}
+        maxW="container.lg"
+        w={['xl', 'container.lg', 'container.xl']}
+      >
         <VStack h="100svh" w="full" spacing={10}>
           <Box w="sm">
             <Link to="/">
               <Header
-                sizeOfHeadingFont="xl"
+                sizeOfHeadingFont="sm"
                 sizeOfTextFont="8px"
                 paddingForLine="8px"
               />

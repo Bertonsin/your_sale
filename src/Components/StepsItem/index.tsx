@@ -19,7 +19,7 @@ export default function StepsItem({
         direction="column"
         alignItems="center"
         zIndex={1}
-        backgroundColor="#FFF"
+        backgroundColor="#F2F2F2"
         _after={
           stepPosition === currentStep + 1 && currentStep === 1
             ? {
@@ -39,7 +39,7 @@ export default function StepsItem({
           direction="column"
           alignItems="center"
           zIndex={2}
-          backgroundColor="#FFF"
+          backgroundColor="#F2F2F2"
           _before={
             stepPosition === currentStep + 1 && currentStep === 2
               ? {

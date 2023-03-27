@@ -7,14 +7,19 @@ export default function Header({
   paddingForLine,
 }: HeaderProps) {
   return (
-    <HStack w="full" justifyContent="space-between" alignItems="center">
-      <Box w="sm">
+    <HStack
+      w={['sm', 'full']}
+      mt={[20, 0]}
+      justifyContent="space-between"
+      alignItems="center"
+    >
+      <Box w={['lg', 'sm']}>
         <Image src="/Coins.png" />
       </Box>
       <VStack
         w="container.md"
         borderBottom="0.1px solid #212326"
-        gap={2}
+        gap={[0, 2]}
         pb={paddingForLine || [5, 8, 12]}
       >
         <Heading color="primary">
@@ -26,7 +31,7 @@ export default function Header({
           Realize suas vendas de forma rápida e segura
         </Text>
       </VStack>
-      <Box w="sm">
+      <Box w={['lg', 'sm']}>
         <Image src="/Phone.png" />
       </Box>
     </HStack>

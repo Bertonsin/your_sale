@@ -36,17 +36,17 @@ export default function ItemList() {
   }
 
   return (
-    <Container maxW="container.xl" p={0}>
+    <Container maxW="container.xl" p={0} w={['sm', 'container.lg']}>
       <Grid
         justifyContent="space-around"
-        templateColumns="3fr 2.7fr 1fr"
+        templateColumns={['2fr 2fr', '3fr 2.7fr 1fr']}
         textStyle="listText"
         textAlign="center"
         color="#FFF"
         w="full"
         bg="#263238"
-        gap={20}
-        p={5}
+        gap={[0, 20]}
+        p={[2, 5]}
         borderRadius="30px 30px 0px 0px"
       >
         <Text>Produto</Text>

@@ -26,7 +26,7 @@ export default function FormModal() {
   return (
     <Modal
       isOpen={isFormModalOpen}
-      size="4xl"
+      size={['full', '4xl']}
       onClose={closeFormModal}
       onCloseComplete={() => {
         setUnitPrice(productUnitPrice);

@@ -4,10 +4,10 @@ import { ItemProps } from './Types/ItemProps';
 export default function Item({ cost, product, stock, unitPrice }: ItemProps) {
   return (
     <Grid
-      templateColumns="3.5fr 3fr 1fr"
+      templateColumns={['2fr 2fr', '3.5fr 3fr 1fr']}
       color="#212326"
       gap={20}
-      ml={10}
+      ml={[0, 10]}
       textStyle="listText"
       w="full"
     >

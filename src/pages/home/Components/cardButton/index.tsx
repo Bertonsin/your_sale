@@ -11,7 +11,7 @@ export default function CardButton() {
         aria-label="card"
         w="full"
         h="full"
-        p={3}
+        p={2}
         borderWidth={1}
         borderRadius={68}
         borderColor="#DADADA"

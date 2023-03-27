@@ -11,7 +11,7 @@ export default function Resume() {
         textStyle="bodyText"
         padding={5}
         w="full"
-        fontSize={['8px', '14px']}
+        fontSize={['18px', '14px']}
         boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25);"
         borderRadius={12}
       >
@@ -41,7 +41,7 @@ export default function Resume() {
             key={item.item?.id}
             textStyle="bodyText"
             padding={5}
-            fontSize={['8px', '14px']}
+            fontSize={['18px', '14px']}
             justifyContent="space-between"
             boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25);"
             borderRadius={12}

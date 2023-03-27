@@ -6,8 +6,26 @@ export type OrderContextProps = {
   formData: FormDataProps;
   cart: FormDataProps[];
   setCart: (cartInfo: FormDataProps[]) => void;
-  orderList: FormDataProps[];
-  setOrderList: (orderList: FormDataProps[]) => void;
+  orderList: FormDataProps[][];
+  setOrderList: (orderList: FormDataProps[][]) => void;
+  totalAverage: number;
+  setTotalAverage: (totalAverage: number) => void;
+  discountAverage: number;
+  setDiscountAverage: (discountAverage: number) => void;
+  profitMarginAverage: number;
+  setProfitMarginAverage: (marginProfitAverage: number) => void;
+  averages: AveragesProps[];
+  setAverages: (
+    averages:
+      | AveragesProps[]
+      | ((prevAverages: AveragesProps[]) => AveragesProps[])
+  ) => void;
+};
+
+export type AveragesProps = {
+  discountAverage: number;
+  profitMarginAverage: number;
+  totalAverage: number;
 };
 
 export type FormDataProps = {
@@ -30,4 +48,7 @@ export type ItemInfo = {
   unitPrice: string;
   cost: string;
   total: number;
+  discountAverage: number;
+  profitMarginAverage: number;
+  totalAverage: number;
 };

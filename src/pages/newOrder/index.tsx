@@ -8,7 +8,7 @@ import {
   HStack,
   VStack,
 } from '@chakra-ui/react';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Card from '../../Components/Card';
 import Header from '../../Components/Header';
@@ -17,6 +17,7 @@ import { ItemFormContextProvider } from '../../contexts/itemformContext';
 import { ModalContext } from '../../contexts/modalContext/context/modalContext';
 import { OrderContext } from '../../contexts/orderContext/Context/orderContext';
 import { useForm } from '../../hooks/useForm';
+import { addOrder } from '../../services/addOrder';
 import { StepChanger } from '../../services/stepChanger/stepChanger';
 import CartModal from './components/cartModal';
 import ClientList from './components/clientList';
@@ -37,7 +38,7 @@ export default function NewOrder() {
   const navigate = useNavigate();
 
   const { currentComponent, changeStep, currentStep } = useForm(ListComponents);
-  const { formData, cart } = useContext(OrderContext);
+  const { formData, cart, setCart } = useContext(OrderContext);
   const { openCartModal } = useContext(ModalContext);
 
   return (
@@ -115,9 +116,9 @@ export default function NewOrder() {
                   type="submit"
                   variant="solid"
                   onClick={(e) => {
-                    localStorage.setItem('allData', JSON.stringify(cart));
-
-                    navigate(0);
+                    addOrder(cart);
+                    navigate('/');
+                    setCart([]);
                     changeStep(currentStep - 2, e);
                   }}
                 >

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import { Box, Container, Flex, HStack, Text, VStack } from '@chakra-ui/react';
 import { useContext, useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
@@ -7,17 +8,23 @@ import { OrderContext } from '../../contexts/orderContext/Context/orderContext';
 import { FormDataProps } from '../../contexts/orderContext/Types/orderContextProps';
 
 export default function OrderDetails() {
-  const [orderInfo, setOrderInfo] = useState<FormDataProps>();
+  const [orderInfo, setOrderInfo] = useState<FormDataProps[]>();
 
   const { orderList } = useContext(OrderContext);
 
-  const { orderId } = useParams();
+  const { orderArrayId } = useParams();
 
   useEffect(() => {
-    if (orderId) {
-      setOrderInfo(orderList[+orderId]);
+    if (orderArrayId) {
+      const data = orderList[+orderArrayId].map((item) => {
+        return item;
+      });
+
+      setOrderInfo(data);
     }
-  }, [orderId, orderList]);
+  }, [orderArrayId, orderList]);
+
+  if (!orderInfo) return null;
 
   return (
     <Container p={5} maxW="full">
@@ -43,7 +50,6 @@ export default function OrderDetails() {
         >
           <Card src="/orderDetails.png" title="Detalhe do pedido" />
         </VStack>
-
         <VStack spacing={10} w="full">
           <Box
             textStyle="bodyText"
@@ -57,13 +63,14 @@ export default function OrderDetails() {
               <Text color="#191919" fontWeight={700}>
                 Cliente
               </Text>
-              <Text>{orderInfo?.client?.name}</Text>
+              <Text>{orderInfo[0]?.client?.name}</Text>
 
               <Text color="#191919" fontWeight={700}>
                 Endereço
               </Text>
               <Text>
-                {orderInfo?.client?.city}- {orderInfo?.client?.state}, Brasil
+                {orderInfo[0]?.client?.city}- {orderInfo[0]?.client?.state},
+                Brasil
               </Text>
               <Text color="#191919" fontWeight={700}>
                 Contato
@@ -71,57 +78,61 @@ export default function OrderDetails() {
               <Text>(62) 39673-9026</Text>
             </VStack>
           </Box>
+          {orderInfo?.map((item, index) => {
+            return (
+              <HStack
+                w="full"
+                textStyle="bodyText"
+                padding={5}
+                fontSize={['12px', '14px']}
+                justifyContent="space-between"
+                boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
+                borderRadius={12}
+                key={index}
+              >
+                <Flex w="full">
+                  <Box>
+                    <VStack spacing={3} alignItems="start">
+                      <Text color="#191919" fontWeight={700}>
+                        Nome do produto
+                      </Text>
+                      <Text>{item?.item?.product}</Text>
 
-          <HStack
-            w="full"
-            textStyle="bodyText"
-            padding={5}
-            fontSize={['12px', '14px']}
-            justifyContent="space-between"
-            boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
-            borderRadius={12}
-          >
-            <Flex w="full">
-              <Box>
-                <VStack spacing={3} alignItems="start">
-                  <Text color="#191919" fontWeight={700}>
-                    Nome do produto
-                  </Text>
-                  <Text>{orderInfo?.item?.product}</Text>
+                      <Text color="#191919" fontWeight={700}>
+                        Custo
+                      </Text>
+                      <Text>R${item?.itemInfo?.cost},00</Text>
+                      <Text color="#191919" fontWeight={700}>
+                        Preço unitário
+                      </Text>
+                      <Text>R${item?.itemInfo?.unitPrice},00</Text>
+                      <Text color="#191919" fontWeight={700}>
+                        Quantidade
+                      </Text>
+                      <Text>{item?.itemInfo?.quantity}x</Text>
+                    </VStack>
+                  </Box>
+                </Flex>
+                <Box w="full">
+                  <VStack spacing={3} alignItems="start">
+                    <Text color="#191919" fontWeight={700}>
+                      Desconto(%)
+                    </Text>
+                    <Text>{item?.itemInfo?.discount}%</Text>
 
-                  <Text color="#191919" fontWeight={700}>
-                    Custo
-                  </Text>
-                  <Text>R${orderInfo?.itemInfo?.cost},00</Text>
-                  <Text color="#191919" fontWeight={700}>
-                    Preço unitário
-                  </Text>
-                  <Text>R${orderInfo?.itemInfo?.unitPrice},00</Text>
-                  <Text color="#191919" fontWeight={700}>
-                    Quantidade
-                  </Text>
-                  <Text>{orderInfo?.itemInfo?.quantity}x</Text>
-                </VStack>
-              </Box>
-            </Flex>
-            <Box w="full">
-              <VStack spacing={3} alignItems="start">
-                <Text color="#191919" fontWeight={700}>
-                  Desconto(%)
-                </Text>
-                <Text>{orderInfo?.itemInfo?.discount}%</Text>
-
-                <Text color="#191919" fontWeight={700}>
-                  Acréscimo(%)
-                </Text>
-                <Text>{orderInfo?.itemInfo?.addition}%</Text>
-                <Text color="#191919" fontWeight={700}>
-                  Margem(%)
-                </Text>
-                <Text>{orderInfo?.itemInfo?.profitMargin}%</Text>
-              </VStack>
-            </Box>
-          </HStack>
+                    <Text color="#191919" fontWeight={700}>
+                      Acréscimo(%)
+                    </Text>
+                    <Text>{item?.itemInfo?.addition}%</Text>
+                    <Text color="#191919" fontWeight={700}>
+                      Margem(%)
+                    </Text>
+                    <Text>{item?.itemInfo?.profitMargin}%</Text>
+                  </VStack>
+                </Box>
+              </HStack>
+            );
+          })}
         </VStack>
       </VStack>
     </Container>

@@ -6,25 +6,16 @@ import {
   Flex,
   FormControl,
   Grid,
-  SkeletonCircle,
   Text,
 } from '@chakra-ui/react';
-import { useQuery } from '@tanstack/react-query';
-import axios from 'axios';
 import { useContext } from 'react';
 import SkeletonLoading from '../../../../Components/SkeletonLoading';
 import { OrderContext } from '../../../../contexts/orderContext/Context/orderContext';
+import useClientList from '../../../../hooks/useClientList';
 import ClientItem from './clientItem';
-import { ClientItemProps } from './clientItem/Types/ClientItemProps';
 
 export default function ClientList() {
-  const { data, isLoading } = useQuery<ClientItemProps[]>({
-    queryKey: ['clientList'],
-    queryFn: async () => {
-      const response = await axios.get('http://localhost:3000/clients');
-      return response.data;
-    },
-  });
+  const { data, isLoading } = useClientList();
   const { updateField, formData } = useContext(OrderContext);
 
   if (isLoading) {
@@ -60,7 +51,7 @@ export default function ClientList() {
         >
           <CheckboxGroup
             value={[
-              `${formData.client?.name} ${formData.client?.cnpj} ${formData.client?.state} ${formData.client?.city}`,
+              `${formData?.client?.name} ${formData?.client?.cnpj} ${formData?.client?.state} ${formData?.client?.city}`,
             ]}
           >
             {data &&

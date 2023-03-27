@@ -10,24 +10,16 @@ import {
   HStack,
   Text,
 } from '@chakra-ui/react';
-import { useQuery } from '@tanstack/react-query';
-import axios from 'axios';
 import { useContext } from 'react';
 import SkeletonLoading from '../../../../Components/SkeletonLoading';
 import { ModalContext } from '../../../../contexts/modalContext/context/modalContext';
 import { OrderContext } from '../../../../contexts/orderContext/Context/orderContext';
+import useItemList from '../../../../hooks/useItemList';
 import FormModal from '../formNewOrder/formModal';
 import Item from './item';
-import { ItemProps } from './item/Types/ItemProps';
 
 export default function ItemList() {
-  const { data, isLoading } = useQuery<ItemProps[]>({
-    queryKey: ['ItemList'],
-    queryFn: async () => {
-      const response = await axios.get('http://localhost:3000/itens');
-      return response.data;
-    },
-  });
+  const { data, isLoading, error } = useItemList();
 
   const { updateField, formData } = useContext(OrderContext);
   const { openFormModal } = useContext(ModalContext);

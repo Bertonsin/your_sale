@@ -1,9 +1,38 @@
+/* eslint-disable no-unsafe-optional-chaining */
 import { Box, Flex, HStack, Text, VStack } from '@chakra-ui/react';
-import { useContext } from 'react';
+import { useCallback, useContext, useEffect, useMemo } from 'react';
 import { OrderContext } from '../../../../contexts/orderContext/Context/orderContext';
+import { AveragesProps } from '../../../../contexts/orderContext/Types/orderContextProps';
 
 export default function Resume() {
-  const { formData, cart } = useContext(OrderContext);
+  const { formData, cart, averages, setAverages } = useContext(OrderContext);
+
+  const calculateAverages = useMemo(() => {
+    const totalSum = cart.reduce((acc, item) => {
+      if (item?.itemInfo?.total) return acc + item?.itemInfo?.total;
+      return 0;
+    }, 0);
+    const totalDiscount = cart.reduce((acc, item) => {
+      if (item?.itemInfo?.total) return acc + +item?.itemInfo?.discount;
+      return 0;
+    }, 0);
+    const totalProfitMargin = cart.reduce((acc, item) => {
+      if (item?.itemInfo?.total) return acc + +item?.itemInfo?.profitMargin;
+      return 0;
+    }, 0);
+
+    return {
+      totalAverage: totalSum / cart.length,
+      discountAverage: totalDiscount / cart.length,
+      profitMarginAverage: totalProfitMargin / cart.length,
+    };
+  }, [cart]);
+
+  useEffect(() => {
+    setAverages((prevAverages) => [...prevAverages, calculateAverages]);
+  }, [calculateAverages, setAverages]);
+
+  console.log(averages);
 
   return (
     <VStack spacing={10} w="container.lg">

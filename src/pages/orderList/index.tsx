@@ -1,12 +1,5 @@
-import {
-  Box,
-  Container,
-  Flex,
-  Grid,
-  HStack,
-  Text,
-  VStack,
-} from '@chakra-ui/react';
+/* eslint-disable react/no-array-index-key */
+import { Box, Container, Flex, Grid, Text, VStack } from '@chakra-ui/react';
 import { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Card from '../../Components/Card';
@@ -14,13 +7,22 @@ import Header from '../../Components/Header';
 import { OrderContext } from '../../contexts/orderContext/Context/orderContext';
 
 export default function OrderList() {
-  const { orderList, setOrderList } = useContext(OrderContext);
+  const {
+    orderList,
+    setOrderList,
+    discountAverage,
+    profitMarginAverage,
+    averages,
+  } = useContext(OrderContext);
+
   useEffect(() => {
     const listOfOrders = localStorage.getItem('allData');
     if (listOfOrders) {
       setOrderList(JSON.parse(listOfOrders));
     }
   }, [setOrderList]);
+
+  console.log(averages);
 
   return (
     <Container padding={0} maxW="container.xl">
@@ -79,17 +81,17 @@ export default function OrderList() {
             alignItems="center"
           >
             {orderList.length > 0 ? (
-              orderList.map((item, index) => {
+              orderList.map((itemArray, indexArray) => {
                 return (
                   <Link
-                    to={`/${index}`}
-                    key={item.item?.id}
+                    to={`/${indexArray}`}
+                    key={indexArray}
                     style={{ width: '100%' }}
                   >
                     <Box
                       _hover={{ backgroundColor: '#658594' }}
                       transition="all 0.3s ease-out"
-                      bg={index % 2 === 0 ? '#CCC' : '#FFF'}
+                      bg={indexArray % 2 === 0 ? '#CCC' : '#FFF'}
                       w="full"
                       textStyle="listText"
                     >
@@ -100,12 +102,14 @@ export default function OrderList() {
                         color="#212326"
                       >
                         <Text color="#263238" fontWeight={600}>
-                          {item.client?.name}
+                          {itemArray[0]?.client?.name}
                         </Text>
-                        <Text>{item.client?.cnpj}</Text>
-                        <Text>{item.itemInfo?.total}</Text>
-                        <Text>{item.itemInfo?.discount}%</Text>
-                        <Text>{item.itemInfo?.profitMargin}%</Text>
+                        <Text>{itemArray[0]?.client?.cnpj}</Text>
+                        <Text>{averages[indexArray]?.totalAverage}</Text>
+                        <Text>{averages[indexArray]?.discountAverage}%</Text>
+                        <Text>
+                          {averages[indexArray]?.profitMarginAverage}%
+                        </Text>
                       </Grid>
                     </Box>
                   </Link>

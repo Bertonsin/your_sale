@@ -8,7 +8,7 @@ import {
   HStack,
   VStack,
 } from '@chakra-ui/react';
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Card from '../../Components/Card';
 import Header from '../../Components/Header';

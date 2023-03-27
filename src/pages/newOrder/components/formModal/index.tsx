@@ -10,10 +10,10 @@ import {
   VStack,
 } from '@chakra-ui/react';
 import { useContext } from 'react';
-import { FormNewOrder } from '..';
-import { ItemFormContext } from '../../../../../contexts/itemformContext/context/itemFormContext';
-import { ModalContext } from '../../../../../contexts/modalContext/context/modalContext';
-import { OrderContext } from '../../../../../contexts/orderContext/Context/orderContext';
+import { FormNewOrder } from './formNewOrder';
+import { ItemFormContext } from '../../../../contexts/itemformContext/context/itemFormContext';
+import { ModalContext } from '../../../../contexts/modalContext/context/modalContext';
+import { OrderContext } from '../../../../contexts/orderContext/Context/orderContext';
 
 export default function FormModal() {
   const { formData, setCart, cart } = useContext(OrderContext);

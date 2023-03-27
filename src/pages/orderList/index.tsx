@@ -7,13 +7,7 @@ import Header from '../../Components/Header';
 import { OrderContext } from '../../contexts/orderContext/Context/orderContext';
 
 export default function OrderList() {
-  const {
-    orderList,
-    setOrderList,
-    discountAverage,
-    profitMarginAverage,
-    averages,
-  } = useContext(OrderContext);
+  const { orderList, setOrderList, averages } = useContext(OrderContext);
 
   useEffect(() => {
     const listOfOrders = localStorage.getItem('allData');
@@ -21,8 +15,6 @@ export default function OrderList() {
       setOrderList(JSON.parse(listOfOrders));
     }
   }, [setOrderList]);
-
-  console.log(averages);
 
   return (
     <Container padding={0} maxW="container.xl">

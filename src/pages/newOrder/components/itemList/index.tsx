@@ -15,7 +15,7 @@ import SkeletonLoading from '../../../../Components/SkeletonLoading';
 import { ModalContext } from '../../../../contexts/modalContext/context/modalContext';
 import { OrderContext } from '../../../../contexts/orderContext/Context/orderContext';
 import useItemList from '../../../../hooks/useItemList';
-import FormModal from '../formNewOrder/formModal';
+import FormModal from '../formModal';
 import Item from './item';
 
 export default function ItemList() {

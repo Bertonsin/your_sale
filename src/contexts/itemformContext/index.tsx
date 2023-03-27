@@ -11,7 +11,7 @@ export function ItemFormContextProvider({ children }: ItemFormProviderProps) {
   const [discount, setDiscount] = useState('0');
   const [addition, setAddition] = useState('0');
   const [quantity, setQuantity] = useState((1).toString() || '1');
-  const [unitPrice, setUnitPrice] = useState('0');
+  const [unitPrice, setUnitPrice] = useState('5000');
   const [total, setTotal] = useState(0);
   const cost = formData?.item?.cost?.toString() || '0';
 

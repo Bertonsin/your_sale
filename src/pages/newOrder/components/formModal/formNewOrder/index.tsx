@@ -6,8 +6,8 @@ import {
   NumberInputField,
 } from '@chakra-ui/react';
 import { useContext, useEffect } from 'react';
-import { ItemFormContext } from '../../../../contexts/itemformContext/context/itemFormContext';
-import { OrderContext } from '../../../../contexts/orderContext/Context/orderContext';
+import { ItemFormContext } from '../../../../../contexts/itemformContext/context/itemFormContext';
+import { OrderContext } from '../../../../../contexts/orderContext/Context/orderContext';
 
 export function FormNewOrder() {
   const { updateField, formData } = useContext(OrderContext);

@@ -18,13 +18,13 @@ O usuário consegue também ver os detalhes dos pedidos criados por ele, podendo
 - Conventional Commits
 
 ### Vite
-  Foi selecionado para o desenvolvimento utilizado vite, principalmente devido a velocidade durante o bundling da aplicação.
+  Foi selecionado para o vite para o desenvolvimento com o react principalmente devido a velocidade durante o bundling da aplicação.
   Além também do HMR que proporciona um carregamento mais rápido da aplicação.
   
 ### Vitest & React testing-library
 
   Para o desenvolvimento de testes unitários na aplicação foram utilizados o vitest aliado ao react testing-library. A escolha
-  ocorreu pela facilidade  de configuração do vitest por ser integrado junto ao vite. Além também de melhores funções para 
+  ocorreu pela facilidade de configuração do vitest por ser integrado junto ao vite. Além também de melhores funções para 
   testes proporcionadas pelo react testing-library.
   
 ### Chakra UI
@@ -33,7 +33,7 @@ O usuário consegue também ver os detalhes dos pedidos criados por ele, podendo
   
 ### React-query & Axios
 
-  A fim de se obter uma maior facilidade no processo de chamadas à API, foram utilizados o Axios junto ao react-query, permitindo também a implementação
+  A fim de se obter uma maior facilidade no processo de consumo de API's, foram utilizados o Axios junto ao react-query, permitindo também a implementação
   de cache às listas da aplicação. Um dos objetivos também foi um melhor entendimento da ferramenta react-query.
   
 ### Conventional Commits

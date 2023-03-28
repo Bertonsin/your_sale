@@ -15,7 +15,7 @@ export default function CardButton() {
         borderWidth={1}
         borderRadius={68}
         borderColor="darkGray"
-        _hover={{ boxShadow: '4px 4px 8px 2px rgba(0,0,0,0.2)' }}
+        _hover={{ boxShadow: '0px 16px 32px rgba(145, 158, 171, 0.25)' }}
         bg="white"
         onClick={() => navigate('/newOrder')}
       >
@@ -34,7 +34,7 @@ export default function CardButton() {
         borderWidth={1}
         borderRadius={68}
         borderColor="darkGray"
-        _hover={{ boxShadow: '4px 4px 8px 2px rgba(0,0,0,0.2)' }}
+        _hover={{ boxShadow: '0px 16px 32px rgba(145, 158, 171, 0.25)' }}
         bg="white"
         onClick={() => navigate('/orderList')}
       >

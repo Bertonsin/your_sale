@@ -46,7 +46,7 @@ export default function OrderDetails() {
           borderColor="darkGray"
           p={3}
           spacing={10}
-          bg="#FFF"
+          bg="white"
         >
           <Card src="/orderDetails.png" title="Detalhe do pedido" />
         </VStack>
@@ -56,7 +56,8 @@ export default function OrderDetails() {
             padding={5}
             w="full"
             fontSize={['12px', '14px']}
-            boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25);"
+            bg="white"
+            boxShadow="0px 16px 32px rgba(145, 158, 171, 0.24)"
             borderRadius={12}
           >
             <VStack spacing={3} alignItems="start">
@@ -84,9 +85,10 @@ export default function OrderDetails() {
                 w="full"
                 textStyle="bodyText"
                 padding={5}
+                bg="white"
                 fontSize={['12px', '14px']}
                 justifyContent="space-between"
-                boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
+                boxShadow="0px 16px 32px rgba(145, 158, 171, 0.24)"
                 borderRadius={12}
                 key={index}
               >

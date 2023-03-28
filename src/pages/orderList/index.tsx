@@ -35,17 +35,16 @@ export default function OrderList() {
           </Link>
         </Box>
 
-        <VStack
+        <Box
           w="full"
           borderWidth={1}
           borderRadius={68}
           borderColor="#DADADA"
           p={3}
-          spacing={10}
           bg="#FFF"
         >
           <Card src="/orderList.png" title="Lista de pedidos" />
-        </VStack>
+        </Box>
 
         <Container maxW="container.xl" p={0}>
           <Grid

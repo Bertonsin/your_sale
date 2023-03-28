@@ -38,7 +38,7 @@ export default function Resume() {
         padding={5}
         w="full"
         fontSize={['18px', '14px']}
-        boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25);"
+        boxShadow="0px 16px 32px rgba(145, 158, 171, 0.25)"
         borderRadius={12}
       >
         <VStack spacing={3} alignItems="start">
@@ -69,7 +69,7 @@ export default function Resume() {
             padding={5}
             fontSize={['18px', '14px']}
             justifyContent="space-between"
-            boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25);"
+            boxShadow="0px 16px 32px rgba(145, 158, 171, 0.25)"
             borderRadius={12}
           >
             <Flex w="sm">

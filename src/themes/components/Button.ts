@@ -32,7 +32,7 @@ export const Button = defineStyleConfig({
       color: '#00297B',
       bg: '#F3F3F3',
       _hover: {
-        boxShadow: '4px 4px 8px 2px rgba(0,0,0,0.3)',
+        boxShadow: '0px 16px 32px rgba(145, 158, 171, 0.25)',
       },
       _active: {
         opacity: 0.2,
@@ -43,7 +43,7 @@ export const Button = defineStyleConfig({
       color: 'white',
       _hover: {
         bg: '#00297B',
-        boxShadow: '4px 4px 8px 2px rgba(0,0,0,0.3)',
+        boxShadow: '0px 16px 32px rgba(145, 158, 171, 0.25)',
       },
     },
   },

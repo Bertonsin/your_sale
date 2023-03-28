@@ -19,7 +19,7 @@ import FormModal from '../formModal';
 import Item from './item';
 
 export default function ItemList() {
-  const { data, isLoading, error } = useItemList();
+  const { data, isLoading } = useItemList();
 
   const { updateField, formData } = useContext(OrderContext);
   const { openFormModal } = useContext(ModalContext);
@@ -35,9 +35,9 @@ export default function ItemList() {
         templateColumns={['2fr 2fr', '3fr 2.7fr 1fr']}
         textStyle="listText"
         textAlign="center"
-        color="#FFF"
+        color="white"
         w="full"
-        bg="#263238"
+        bg="softBlack"
         gap={[0, 20]}
         p={[2, 5]}
         borderRadius="30px 30px 0px 0px"
@@ -63,7 +63,7 @@ export default function ItemList() {
                 return (
                   <Box
                     key={item.stock}
-                    bg={index % 2 === 0 ? '#CCC' : '#FFF'}
+                    bg={index % 2 === 0 ? 'gray' : 'white'}
                     w="full"
                     onClick={openFormModal}
                   >

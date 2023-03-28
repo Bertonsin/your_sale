@@ -16,7 +16,7 @@ export default function ClientItem({
       textStyle="listText"
       w="full"
     >
-      <Text fontWeight="600" color="#263238">
+      <Text fontWeight="600" color="softBlack">
         {name}
       </Text>
       <Text>{cnpj}</Text>

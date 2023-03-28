@@ -10,7 +10,7 @@ export default function SkeletonLoading({
       <Grid
         justifyContent="center"
         textAlign="center"
-        color="#FFF"
+        color="white"
         p={5}
         borderRadius="30px 30px 0px 0px"
       >
@@ -19,9 +19,9 @@ export default function SkeletonLoading({
           templateColumns={['2fr 2fr', '1.5fr repeat(3,1fr)']}
           textStyle="listText"
           textAlign="center"
-          color="#FFF"
+          color="white"
           w="full"
-          bg="#263238"
+          bg="softBlack"
           p={5}
           borderRadius="30px 30px 0px 0px"
         >
@@ -54,9 +54,9 @@ export default function SkeletonLoading({
         templateColumns={['2fr 2fr', '3fr 2.7fr 1fr']}
         textStyle="listText"
         textAlign="center"
-        color="#FFF"
+        color="white"
         w="full"
-        bg="#263238"
+        bg="#softBlack"
         gap={[0, 20]}
         p={[2, 5]}
         borderRadius="30px 30px 0px 0px"

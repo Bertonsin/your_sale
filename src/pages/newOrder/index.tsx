@@ -49,10 +49,10 @@ export default function NewOrder() {
               w="full"
               borderWidth={1}
               borderRadius={68}
-              borderColor="#DADADA"
+              borderColor="darkGray"
               p={3}
               spacing={10}
-              bg="#FFF"
+              bg="white"
             >
               <Card src="/newOrder.png" title="Nova Venda" />
             </VStack>

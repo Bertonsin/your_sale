@@ -11,7 +11,7 @@ export default function Card({ src, title, info }: CardProps) {
     >
       <Image src={src} boxSize="20" />
       <Box textAlign="start" textStyle="bodyText">
-        <Text color="#263238" fontWeight="medium">
+        <Text color="softBlack" fontWeight="medium">
           {title}
         </Text>
         <Text color="#797979">{info}</Text>

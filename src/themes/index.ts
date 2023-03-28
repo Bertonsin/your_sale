@@ -12,8 +12,12 @@ export const customTheme = extendTheme({
     colors: {
       primary: '#00297B',
       black: '#212326',
+      softBlack: '#263238',
+      smoothBlack: '#191919',
       gray: '#CCCCCC',
-      white: '#F2F2F2',
+      darkGray: '#DADADA',
+      lightGray: '#F2F2F2',
+      white: '#FFFFFF',
     },
   },
   components: {

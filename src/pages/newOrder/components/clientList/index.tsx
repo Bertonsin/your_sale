@@ -31,7 +31,7 @@ export default function ClientList() {
         textAlign="center"
         color="#FFF"
         w="full"
-        bg="#263238"
+        bg="softBlack"
         p={5}
         borderRadius="30px 30px 0px 0px"
       >
@@ -59,7 +59,7 @@ export default function ClientList() {
                 return (
                   <Box
                     key={item.city}
-                    bg={index % 2 === 0 ? '#CCC' : '#FFF'}
+                    bg={index % 2 === 0 ? 'gray' : 'white'}
                     w="full"
                   >
                     <Checkbox

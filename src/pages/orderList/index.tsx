@@ -55,7 +55,7 @@ export default function OrderList() {
             textAlign="center"
             color="#FFF"
             w="full"
-            bg="#263238"
+            bg="softBlack"
             p={5}
             borderRadius="30px 30px 0px 0px"
           >
@@ -81,9 +81,9 @@ export default function OrderList() {
                     style={{ width: '100%' }}
                   >
                     <Box
-                      _hover={{ backgroundColor: '#658594' }}
+                      _hover={{ backgroundColor: 'darkGray' }}
                       transition="all 0.3s ease-out"
-                      bg={indexArray % 2 === 0 ? '#CCC' : '#FFF'}
+                      bg={indexArray % 2 === 0 ? 'gray' : 'white'}
                       w="full"
                       textStyle="listText"
                     >
@@ -91,9 +91,9 @@ export default function OrderList() {
                         w="full"
                         py={2}
                         templateColumns={['2fr 2fr', 'repeat(5,1fr)']}
-                        color="#212326"
+                        color="black"
                       >
-                        <Text color="#263238" fontWeight={600}>
+                        <Text color="softBlack" fontWeight={600}>
                           {itemArray[0]?.client?.name}
                         </Text>
                         <Text>{itemArray[0]?.client?.cnpj}</Text>

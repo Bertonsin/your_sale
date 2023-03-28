@@ -11,7 +11,7 @@ export default function Item({ cost, product, stock, unitPrice }: ItemProps) {
       textStyle="listText"
       w="full"
     >
-      <Text fontWeight="600" color="#263238">
+      <Text fontWeight="600" color="#softBlack">
         {product}
       </Text>
       <HStack

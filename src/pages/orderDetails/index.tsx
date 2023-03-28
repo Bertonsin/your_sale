@@ -43,7 +43,7 @@ export default function OrderDetails() {
           w="full"
           borderWidth={1}
           borderRadius={68}
-          borderColor="#DADADA"
+          borderColor="darkGray"
           p={3}
           spacing={10}
           bg="#FFF"
@@ -60,19 +60,19 @@ export default function OrderDetails() {
             borderRadius={12}
           >
             <VStack spacing={3} alignItems="start">
-              <Text color="#191919" fontWeight={700}>
+              <Text color="smoothBlack" fontWeight={700}>
                 Cliente
               </Text>
               <Text>{orderInfo[0]?.client?.name}</Text>
 
-              <Text color="#191919" fontWeight={700}>
+              <Text color="smoothBlack" fontWeight={700}>
                 Endereço
               </Text>
               <Text>
                 {orderInfo[0]?.client?.city}- {orderInfo[0]?.client?.state},
                 Brasil
               </Text>
-              <Text color="#191919" fontWeight={700}>
+              <Text color="smoothBlack" fontWeight={700}>
                 Contato
               </Text>
               <Text>(62) 39673-9026</Text>
@@ -93,20 +93,20 @@ export default function OrderDetails() {
                 <Flex w="full">
                   <Box>
                     <VStack spacing={3} alignItems="start">
-                      <Text color="#191919" fontWeight={700}>
+                      <Text color="smoothBlack" fontWeight={700}>
                         Nome do produto
                       </Text>
                       <Text>{item?.item?.product}</Text>
 
-                      <Text color="#191919" fontWeight={700}>
+                      <Text color="smoothBlack" fontWeight={700}>
                         Custo
                       </Text>
                       <Text>R${item?.itemInfo?.cost},00</Text>
-                      <Text color="#191919" fontWeight={700}>
+                      <Text color="smoothBlack" fontWeight={700}>
                         Preço unitário
                       </Text>
                       <Text>R${item?.itemInfo?.unitPrice},00</Text>
-                      <Text color="#191919" fontWeight={700}>
+                      <Text color="smoothBlack" fontWeight={700}>
                         Quantidade
                       </Text>
                       <Text>{item?.itemInfo?.quantity}x</Text>
@@ -115,16 +115,16 @@ export default function OrderDetails() {
                 </Flex>
                 <Box w="full">
                   <VStack spacing={3} alignItems="start">
-                    <Text color="#191919" fontWeight={700}>
+                    <Text color="smoothBlack" fontWeight={700}>
                       Desconto(%)
                     </Text>
                     <Text>{item?.itemInfo?.discount}%</Text>
 
-                    <Text color="#191919" fontWeight={700}>
+                    <Text color="smoothBlack" fontWeight={700}>
                       Acréscimo(%)
                     </Text>
                     <Text>{item?.itemInfo?.addition}%</Text>
-                    <Text color="#191919" fontWeight={700}>
+                    <Text color="smoothBlack" fontWeight={700}>
                       Margem(%)
                     </Text>
                     <Text>{item?.itemInfo?.profitMargin}%</Text>

@@ -38,7 +38,7 @@ export default function FormModal() {
       <ModalOverlay />
       <ModalContent borderRadius={20}>
         <ModalHeader fontFamily="Inter" fontWeight="600" color="primary">
-          Nome do produto
+          {formData?.item?.product}
         </ModalHeader>
 
         <ModalBody pb={6} textStyle="listText">

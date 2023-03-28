@@ -5,16 +5,16 @@ export default function TutorialTexts() {
     <Box w={['sm', 'container.sm']} textStyle="bodyText">
       <Box mb={8} color="#797979">
         <Text>
-          Voce podera iniciar sua venda clicando em
+          Você poderá iniciar sua venda clicando em
           <strong> NOVA VENDA </strong>
-          assim preenchendos os dados necessarios e gerando um novo pedido
+          assim preenchendo os dados necessários e gerando um novo pedido
         </Text>
       </Box>
       <Box>
         <Text color="#797979">
-          Voce podera visualizar todas vendas criadas clicando em
+          Você poderá visualizar todas as vendas criadas clicando em
           <strong> LISTA DE PEDIDOS </strong> assim podendo visualizar a
-          listagem de pedidos e verificar detalhe do pedido criado.
+          listagem de pedidos e verificar os detalhes do pedido criado.
         </Text>
       </Box>
     </Box>

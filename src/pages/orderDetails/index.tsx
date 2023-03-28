@@ -27,8 +27,8 @@ export default function OrderDetails() {
   if (!orderInfo) return null;
 
   return (
-    <Container p={5} maxW="full">
-      <VStack h="100svh" w="full">
+    <Container p={5} maxW="full" pb={20}>
+      <VStack h="100svh" w="full" spacing={10} mb={20}>
         <Box w="sm">
           <Link to="/">
             <Header

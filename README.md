@@ -16,9 +16,10 @@ O usuário consegue também ver os detalhes dos pedidos criados por ele, podendo
 - React query
 - Axios
 - Conventional Commits
+- Json Server
 
 ### Vite
-  Foi selecionado para o vite para o desenvolvimento com o react principalmente devido a velocidade durante o bundling da aplicação.
+  Foi selecionado o vite para o desenvolvimento com o react principalmente devido a velocidade durante o bundling da aplicação.
   Além também do HMR que proporciona um carregamento mais rápido da aplicação.
   
 ### Vitest & React testing-library
@@ -39,6 +40,10 @@ O usuário consegue também ver os detalhes dos pedidos criados por ele, podendo
 ### Conventional Commits
 
   Para melhor organização dos commits foi utilizada a técnica de conventional commits, buscando também aprender mais a respeito dessa técnica.
+  
+### Json Server
+
+  Com o objetivo de realizar o consumo de API's, foi utilizada de uma fake Api por meio do Json-server.
 
 ## Installation
 
@@ -48,6 +53,23 @@ O usuário consegue também ver os detalhes dos pedidos criados por ele, podendo
 npm install
 ```
 
+## Usage
+
+ Primeiramente, inicie a fake api rodando:
+
+```python
+
+npx json-server --watch db.json
+
+```
+  Para iniciar a aplicação rode: 
+
+```python
+
+npm run dev
+
+```
+
 ### Tests
 
   Para rodar os testes da aplicação rode: 
@@ -55,23 +77,6 @@ npm install
 ```python
 
 npm run test
-
-```
-
-## Usage
-
-  Inicie a fake api rodando:
-
-```python
-
-json-server --watch db.json
-
-```
-  Para rodar a aplicação rode: 
-
-```python
-
-npm run dev
 
 ```
 

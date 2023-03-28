@@ -78,7 +78,7 @@ export default function Resume() {
                   <Text color="#191919" fontWeight={700}>
                     Nome do produto
                   </Text>
-                  <Text>{item.item?.id}</Text>
+                  <Text>{item.item?.product}</Text>
 
                   <Text color="#191919" fontWeight={700}>
                     Custo

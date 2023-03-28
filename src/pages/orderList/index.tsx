@@ -71,7 +71,7 @@ export default function OrderList() {
             justifyContent="center"
             alignItems="center"
           >
-            {orderList.length > 0 ? (
+            {orderList[0].length > 0 ? (
               orderList.map((itemArray, indexArray) => {
                 return (
                   <Link

@@ -3,12 +3,14 @@ import { extendTheme } from '@chakra-ui/react';
 import { Button } from './components/Button';
 
 export const customTheme = extendTheme({
-  semanticTokens: {
+  styles: {
     global: {
       'html,body': {
         backgroundColor: '#F2F2F2',
       },
     },
+  },
+  semanticTokens: {
     colors: {
       primary: '#00297B',
       black: '#212326',

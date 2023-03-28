@@ -19,7 +19,7 @@ export default function StepsItem({
         direction="column"
         alignItems="center"
         zIndex={1}
-        backgroundColor="#F2F2F2"
+        backgroundColor="lightGray"
         _after={
           stepPosition === currentStep + 1 && currentStep === 1
             ? {
@@ -39,7 +39,7 @@ export default function StepsItem({
           direction="column"
           alignItems="center"
           zIndex={2}
-          backgroundColor="#F2F2F2"
+          backgroundColor="lightGray"
           _before={
             stepPosition === currentStep + 1 && currentStep === 2
               ? {
@@ -55,15 +55,15 @@ export default function StepsItem({
           }
         >
           <Text
-            color={stepPosition === currentStep + 1 ? '#FFF' : '#CCC'}
-            bg={stepPosition === currentStep + 1 ? '#00297B' : '#A3A3A3'}
+            color={stepPosition === currentStep + 1 ? 'white' : 'gray'}
+            bg={stepPosition === currentStep + 1 ? 'primary' : '#A3A3A3'}
             borderRadius="50%"
             w="1.6em"
           >
             {stepPosition}
           </Text>
           <Text
-            color={stepPosition === currentStep + 1 ? '#00297B' : '#A3A3A3'}
+            color={stepPosition === currentStep + 1 ? 'primary' : '#A3A3A3'}
           >
             {stepName}
           </Text>
